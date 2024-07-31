@@ -1,12 +1,96 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.attribution {
-    font-size: 11px;
-    text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.attribution a {
-    color: hsl(228, 45%, 44%);
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+:root {
+  --color-bg: #ededfa;
+  --color-moderate-blue: hsl(238, 40%, 52%);
+  --color-soft-red: hsl(358, 79%, 66%);
+  --color-light-grayish-blue: hsl(239, 57%, 85%);
+  --color-pale-red: hsl(357, 100%, 86%);
+  --color-dark-blue: hsl(212, 24%, 26%);
+  --color-grayish-blue: hsl(211, 10%, 45%);
+  --color-light-gray: hsl(223, 19%, 93%);
+  --color-very-light-gray: hsl(228, 33%, 97%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+body {
+  min-width: 100vw;
+  background: var(--color-bg);
+}
+
+.loader-container {
+  max-width: 67.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.6rem;
+  position: relative;
+}
+
+@media only screen and (min-width: 769px) {
+  .loader-container {
+    padding-top: 6.4rem;
+  }
+}
+
+/* ---- loader ---- */
+.loader {
+  width: 4.8rem;
+  height: 4.8rem;
+  display: inline-block;
+  position: relative;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  border: 0.3rem solid var(--color-moderate-blue);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }

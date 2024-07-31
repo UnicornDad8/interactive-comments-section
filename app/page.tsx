@@ -54,7 +54,9 @@ export default function Home() {
 
     setCurrentUser(currentUserData);
     setComments(commentsData);
-    setFirstLoading(false);
+    setTimeout(() => {
+      setFirstLoading(false);
+    }, 5000);
   }, []);
 
   useEffect(() => {
@@ -94,7 +96,7 @@ export default function Home() {
     setTimeout(() => {
       setComments([...comments, newComment]);
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
   const handleReplyComment = (newReply: Reply, commentId: number) => {
@@ -114,7 +116,7 @@ export default function Home() {
     setTimeout(() => {
       setComments(addReply);
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
   const handleUpdateComment = (
@@ -137,7 +139,7 @@ export default function Home() {
     setTimeout(() => {
       setComments(updateComment);
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
   const handleDeleteComment = (commentId: number) => {
@@ -149,7 +151,7 @@ export default function Home() {
     setTimeout(() => {
       setComments(deleteComment);
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
   const handleUpdateCommentVote = (commentId: number, operation: string) => {
@@ -171,7 +173,7 @@ export default function Home() {
       setComments(updateVote);
       sortComments();
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
   const handleReplyReply = (newReply: Reply, replyId: number) => {
@@ -193,7 +195,7 @@ export default function Home() {
     setTimeout(() => {
       setComments(EditComment);
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
   const handleUpdateReply = (updatedReplyContent: string, replyId: number) => {
@@ -219,7 +221,7 @@ export default function Home() {
     setTimeout(() => {
       setComments(EditComment);
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
   const handleDeleteReply = (replyId: number) => {
@@ -235,7 +237,7 @@ export default function Home() {
     setTimeout(() => {
       setComments(updatedComments);
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
   const handleUpdateReplyVote = (replyId: number, operation: string) => {
@@ -263,10 +265,15 @@ export default function Home() {
 
       setComments(updateVote);
       setLoading(false);
-    }, 2000);
+    }, 5000);
   };
 
-  if (isFirstLoading) return <main>Loading...</main>;
+  if (isFirstLoading)
+    return (
+      <main className="loader-container">
+        <span className="loader"></span>
+      </main>
+    );
 
   return (
     <main>
