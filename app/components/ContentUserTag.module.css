@@ -1,0 +1,8 @@
+.content-user {
+  color: var(--color-moderate-blue);
+  font-weight: 500;
+}
+
+.content-user:hover {
+  cursor: pointer;
+}

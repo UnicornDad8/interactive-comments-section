@@ -10,12 +10,3 @@
   gap: 1.6rem;
   rounded: 1.2rem;
 }
-
-.textarea {
-  outline: none;
-  border: 1px solid var(--color-light-grayish-blue);
-  padding: 0.8rem 1.6rem;
-  rounded: 1.2rem;
-  width: 100%;
-  color: var(--color-dark-blue);
-}

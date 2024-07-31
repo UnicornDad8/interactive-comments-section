@@ -130,7 +130,11 @@ body {
 }
 
 .hidden {
-  display: hidden;
+  display: none;
+}
+
+.block {
+  display: block;
 }
 
 @media only screen and (min-width: 769px) {
@@ -139,6 +143,27 @@ body {
   }
 
   .md-hidden {
-    display: hidden;
+    display: none !important;
+  }
+}
+
+.-mt-2 {
+  margin-top: -0.8rem;
+}
+
+.textarea {
+  outline: none;
+  border: 1px solid var(--color-light-gray);
+  padding: 0.8rem 1.6rem;
+  rounded: 1.2rem;
+  width: 100%;
+  color: var(--color-dark-blue);
+  border-radius: 1.2rem;
+  height: 15rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .textarea {
+    height: auto;
   }
 }

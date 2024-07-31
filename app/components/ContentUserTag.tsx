@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "./ContentUserTag.module.css";
 
 type ContentUserTagProps = {
   replyingTo?: string;
@@ -7,7 +7,11 @@ type ContentUserTagProps = {
 const ContentUserTag = (props: ContentUserTagProps) => {
   const replyingTo = props.replyingTo;
 
-  return <span>{replyingTo + " "}</span>;
+  return (
+    <span className={(replyingTo ? "" : "hidden ") + styles["content-user"]}>
+      {replyingTo + " "}
+    </span>
+  );
 };
 
 export default ContentUserTag;

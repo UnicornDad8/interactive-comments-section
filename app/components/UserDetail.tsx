@@ -53,7 +53,7 @@ const UserDetail = (props: UserDetailProps) => {
   return (
     <div>
       <div>
-        <Avatar sourceImage={image} username={username} />
+        <Avatar isBigAvatar={false} sourceImage={image} username={username} />
         <div>
           <div>{username}</div>
           <UserLabel show={isCurrentUser} />

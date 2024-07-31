@@ -75,7 +75,7 @@ const Content = (props: ContentProps) => {
       {isEditing ? (
         <div className={styles["edit-container"]}>
           <textarea
-            className={styles["textarea"]}
+            className="textarea"
             placeholder="Add a comment..."
             value={editValue}
             onChange={handleChangeEditValue}

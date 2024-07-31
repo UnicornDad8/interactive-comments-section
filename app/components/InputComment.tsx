@@ -3,6 +3,7 @@
 import React, { ChangeEventHandler, useState } from "react";
 import Avatar from "./Avatar";
 import ActionButton from "./ActionButton";
+import styles from "./InputComment.module.css";
 
 type InputCommentProps = {
   currentUser: User;
@@ -77,20 +78,27 @@ const InputComment = (props: InputCommentProps) => {
   };
 
   return (
-    <div>
-      <div>
+    <div
+      className={
+        (action == "reply" ? "-mt-2 " : " ") + styles["input-comment-container"]
+      }
+    >
+      <div className="md-block hidden">
         <Avatar
+          isBigAvatar={true}
           sourceImage={currentUser.image}
           username={currentUser.username}
         />
       </div>
       <textarea
+        className="textarea"
         placeholder="Add a comment..."
         value={commentValue}
         onChange={handleChangeCommentValue}
       />
-      <div>
+      <div className={`${styles["user-actions-container"]} md-hidden`}>
         <Avatar
+          isBigAvatar={false}
           sourceImage={currentUser.image}
           username={currentUser.username}
         />
@@ -109,7 +117,7 @@ const InputComment = (props: InputCommentProps) => {
           action={action}
         />
       </div>
-      <div>
+      <div className="hidden md-block">
         <ActionButton
           resetCommentValue={resetCommentValue}
           replyIdToReply={replyIdToReply}
