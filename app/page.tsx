@@ -271,7 +271,10 @@ export default function Home() {
   if (isFirstLoading)
     return (
       <main className="loader-container">
-        <span className="loader"></span>
+        <div className="ripple-loader">
+          <div></div>
+          <div></div>
+        </div>
       </main>
     );
 
