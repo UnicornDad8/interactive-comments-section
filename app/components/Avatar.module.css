@@ -1,0 +1,5 @@
+.avatar {
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import styles from "./Avatar.module.css";
 
 type AvatarProps = {
   sourceImage: {
@@ -15,7 +15,13 @@ const Avatar = (props: AvatarProps) => {
   const username = props.username;
 
   return (
-    <Image src={webp} width={16} height={16} alt={"Avatar of " + username} />
+    <Image
+      className={styles["avatar"]}
+      src={webp}
+      width={32}
+      height={32}
+      alt={"Avatar of " + username}
+    />
   );
 };
 

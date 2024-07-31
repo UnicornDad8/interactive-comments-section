@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ContentUserTag from "./ContentUserTag";
 import ActionButton from "./ActionButton";
+import styles from "./Content.module.css";
 
 type ContentProps = {
   content: string;
@@ -66,19 +67,20 @@ const Content = (props: ContentProps) => {
   return (
     <>
       {!isEditing ? (
-        <div>
+        <div className={styles["text-neutral-grayish-blue"]}>
           <ContentUserTag replyingTo={replyingTo} />
           {content}
         </div>
       ) : null}
       {isEditing ? (
-        <div>
+        <div className={styles["edit-container"]}>
           <textarea
+            className={styles["textarea"]}
             placeholder="Add a comment..."
             value={editValue}
             onChange={handleChangeEditValue}
           />
-          <div>
+          <div className="block">
             <ActionButton
               updatedReplyContent={editValue}
               replyIdToUpdate={replyIdToUpdate}

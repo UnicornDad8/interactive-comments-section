@@ -67,9 +67,13 @@ body {
 
 .ripple-loader div {
   position: absolute;
-  border: 0.4rem solid var(--color-moderate-blue);
+  border: 0.4rem solid var(--color-white);
   border-radius: 50%;
   animation: ripple-loader 1s ease-out infinite;
+}
+
+.ripple-loader-blue div {
+  border: 0.4rem solid var(--color-moderate-blue);
 }
 
 .ripple-loader div:nth-child(2) {
@@ -90,5 +94,51 @@ body {
     width: 6.4rem;
     height: 6.4rem;
     opacity: 0;
+  }
+}
+
+.is-loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------ main container -----*/
+.main-container {
+  max-width: 67.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  position: relative;
+}
+
+@media only screen and (min-width: 769px) {
+  .main-container {
+    padding-top: 6.4rem;
+  }
+}
+
+.hidden {
+  display: hidden;
+}
+
+@media only screen and (min-width: 769px) {
+  .md-block {
+    display: block;
+  }
+
+  .md-hidden {
+    display: hidden;
   }
 }

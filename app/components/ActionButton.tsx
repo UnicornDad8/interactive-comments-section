@@ -1,6 +1,5 @@
-import React from "react";
-import { handleSave } from "../functions/handleSave";
 import getDate from "../functions/getDate";
+import styles from "./ActionButton.module.css";
 
 type ActionButtonProps = {
   action: string;
@@ -144,7 +143,11 @@ const ActionButton = (props: ActionButtonProps) => {
     replyingTo: replyingTo ?? "",
   };
 
-  return <button onClick={handleClick}>{action}</button>;
+  return (
+    <button className={styles["action-button"]} onClick={handleClick}>
+      {action}
+    </button>
+  );
 };
 
 export default ActionButton;

@@ -1,8 +1,8 @@
-import React from "react";
+import styles from "./Attribuition.module.css";
 
 const Attribution = () => {
   return (
-    <div>
+    <div className={styles["attribution"]}>
       Challenge by{" "}
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
         Frontend Mentor

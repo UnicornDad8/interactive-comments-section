@@ -9,7 +9,8 @@ import Reply from "./Reply";
 import InputComment from "./InputComment";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
-import DeleteModal from "./DeleteModal";
+// import DeleteModal from "./DeleteModal";
+import styles from "./Comment.module.css";
 
 interface Comment {
   id: number;
@@ -82,15 +83,15 @@ const Comment = (props: CommentProps) => {
 
   return (
     <>
-      <div>
-        <div>
+      <div className={styles["comment-container"]}>
+        <div className={`${styles["hidden"]} ${styles["md-block"]}`}>
           <Vote
             commentIdToChangeVote={comment.id}
             onCommentVoteChange={onCommentVoteChange}
             score={comment.score}
           />
         </div>
-        <div>
+        <div className={styles["user-container"]}>
           <UserDetail
             commentIdToDelete={comment.id}
             onDeleteComment={onDeleteComment}
@@ -114,15 +115,17 @@ const Comment = (props: CommentProps) => {
             isEditing={isEditing}
           />
         </div>
-        <div>
-          <div>
+        <div className={styles["actions-and-votes-container"]}>
+          <div className={`${styles["hidden"]} ${styles["md-block"]}`}>
             <Vote
               commentIdToChangeVote={comment.id}
               onCommentVoteChange={onCommentVoteChange}
               score={comment.score}
             />
           </div>
-          <div>
+          <div
+            className={`${styles["actions-container"]} ${styles["md-hidden"]}`}
+          >
             <ReplyButton
               show={isCurrentUser}
               isReplying={isReplying}

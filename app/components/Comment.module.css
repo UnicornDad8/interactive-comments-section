@@ -1,0 +1,34 @@
+.comment-container {
+  background: var(--color-white);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  border-radius: 0.6rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .comment-container {
+    flex-direction: row;
+  }
+}
+
+.user-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.actions-and-votes-container {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: space-between;
+}
+
+.actions-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}

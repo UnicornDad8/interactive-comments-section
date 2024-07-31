@@ -1,20 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Comment from "./components/Comment";
 import Reply from "./components/Reply";
 import InputComment from "./components/InputComment";
-import UserDetail from "./components/UserDetail";
-import Vote from "./components/Vote";
-import ReplyButton from "./components/ReplyButton";
-import DeleteButton from "./components/DeleteButton";
-import EditButton from "./components/EditButton";
-import SendButton from "./components/ActionButton";
-import Avatar from "./components/Avatar";
-import Content from "./components/Content";
-import Attribution from "./components/Attribution";
-import Modal from "./components/DeleteModal";
-import { handleSave } from "./functions/handleSave";
 import handleLoad from "./functions/handleLoad";
 import { useEffect, useState } from "react";
 import data from "./data/data.json";
@@ -271,7 +259,7 @@ export default function Home() {
   if (isFirstLoading)
     return (
       <main className="loader-container">
-        <div className="ripple-loader">
+        <div className="ripple-loader ripple-loader-blue">
           <div></div>
           <div></div>
         </div>
@@ -279,7 +267,7 @@ export default function Home() {
     );
 
   return (
-    <main>
+    <main className="main-container">
       {comments?.map((value: Comment) => {
         return (
           <Comment
@@ -307,8 +295,11 @@ export default function Home() {
         action="send"
       />
       {isLoading ? (
-        <div>
-          <div>Loading...</div>
+        <div className="is-loading">
+          <div className="ripple-loader">
+            <div></div>
+            <div></div>
+          </div>
         </div>
       ) : null}
     </main>
