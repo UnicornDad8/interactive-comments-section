@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "./DeleteModal.module.css";
 
 type DeleteModalProps = {
   onShowModalChange: () => void;
@@ -32,16 +32,26 @@ const DeleteModal = (props: DeleteModalProps) => {
   };
 
   return (
-    <div>
-      <div>
-        <div>Delete comment?</div>
+    <div className={styles["modal-container"]}>
+      <div className={styles["modal-content"]}>
+        <div className={styles["modal-title"]}>Delete comment?</div>
         <div>
           Are you sure you want to delete this comment? This will remove the
           comment and cant be undone
         </div>
-        <div>
-          <button onClick={handleClick}>No, cancel</button>
-          <button onClick={handleDeleteClick}>Yes, delete</button>
+        <div className={styles["modal-buttons"]}>
+          <button
+            className={`${styles["modal-button"]} ${styles["button-gray"]}`}
+            onClick={handleClick}
+          >
+            No, cancel
+          </button>
+          <button
+            className={`${styles["modal-button"]} ${styles["button-danger"]}`}
+            onClick={handleDeleteClick}
+          >
+            Yes, delete
+          </button>
         </div>
       </div>
     </div>
