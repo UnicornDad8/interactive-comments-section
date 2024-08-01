@@ -65,7 +65,7 @@ const Reply = (props: ReplyProps) => {
 
   return (
     <div className={styles["reply-container"]}>
-      <div className={styles["user-vote-and-actions"]}>
+      <div className={styles["reply-container-inner"]}>
         <div className="hidden md-block">
           <Vote
             replyIdToChangeVote={reply.id}
@@ -98,7 +98,7 @@ const Reply = (props: ReplyProps) => {
             isEditing={isEditing}
           />
         </div>
-        <div>
+        <div className={styles["user-vote-and-actions"]}>
           <div className="block md-hidden">
             <Vote
               replyIdToChangeVote={reply.id}
@@ -106,9 +106,10 @@ const Reply = (props: ReplyProps) => {
               score={reply.score}
             />
           </div>
-          <div className="md-hidden">
+
+          <div className={`md-hidden ${styles["actions-container"]}`}>
             <ReplyButton
-              show={isCurrentUser}
+              show={!isCurrentUser}
               isReplying={isReplying}
               onIsReplyingChange={handleIsReplyingChange}
             />

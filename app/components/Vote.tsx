@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import MinusIcon from "./svgs/MinusIcon";
 import PlusIcon from "./svgs/PlusIcon";
+import styles from "./Vote.module.css";
 
 type VoteProps = {
   score: number;
@@ -29,12 +30,18 @@ const Vote = (props: VoteProps) => {
   };
 
   return (
-    <div>
-      <button onClick={() => handleClick("add")}>
+    <div className={styles["vote-container"]}>
+      <button
+        onClick={() => handleClick("add")}
+        className={styles["center-icon"]}
+      >
         <PlusIcon />
       </button>
       <div>{score}</div>
-      <button onClick={() => handleClick("sub")}>
+      <button
+        onClick={() => handleClick("sub")}
+        className={styles["center-icon"]}
+      >
         <MinusIcon />
       </button>
     </div>

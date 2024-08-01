@@ -1,0 +1,43 @@
+.user-detail-container {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 769px) {
+  .user-detail-container {
+    justify-content: space-between;
+  }
+}
+
+.user-details-no-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.username-container {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.username {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--color-dark-blue);
+}
+
+.user-date {
+  font-size: 1.3rem;
+  opacity: 0.4;
+}
+
+@media only screen and (min-width: 769px) {
+  .actions-container {
+    display: flex;
+    gap: 1.6rem;
+  }
+}

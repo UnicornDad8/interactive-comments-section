@@ -1,18 +1,18 @@
 .reply-container {
-  padding-left: 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  background: var(--color-white);
+  border-radius: 0.8rem;
 }
 
 @media only screen and (min-width: 769px) {
   .reply-container {
-    margin-left: 3.2rem;
-    padding-left: 3.2rem;
+    margin-left: 9.6rem;
   }
 }
 
-.user-vote-and-actions {
+.reply-container-inner {
   padding: 1.6rem;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
 }
 
 @media only screen and (min-width: 769px) {
-  .user-vote-and-actions {
+  .reply-container-inner {
     flex-direction: row;
   }
 }
@@ -31,4 +31,17 @@
   flex-direction: column;
   gap: 1.6rem;
   width: 100%;
+}
+
+.user-vote-and-actions {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: space-between;
+}
+
+.actions-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
 }

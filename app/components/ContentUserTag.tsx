@@ -8,8 +8,10 @@ const ContentUserTag = (props: ContentUserTagProps) => {
   const replyingTo = props.replyingTo;
 
   return (
-    <span className={(replyingTo ? "" : "hidden ") + styles["content-user"]}>
-      {replyingTo + " "}
+    <span
+      className={(replyingTo ? "" : "hidden") + " " + styles["content-user"]}
+    >
+      {"@" + replyingTo + " "}
     </span>
   );
 };

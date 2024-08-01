@@ -1,0 +1,11 @@
+.user-label {
+  background: var(--color-moderate-blue);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

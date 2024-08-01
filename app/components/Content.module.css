@@ -1,5 +1,6 @@
-.text-neutral-grayish-blue {
+.content {
   color: var(--color-grayish-blue);
+  font-size: 1.6rem;
 }
 
 .edit-container {

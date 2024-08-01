@@ -1,4 +1,4 @@
-.edit-button {
+.reply-button {
   display: flex;
   gap: 0.8rem;
   align-items: center;
@@ -10,7 +10,7 @@
   font-weight: 600;
 }
 
-.edit-button:hover {
+.reply-button:hover {
   opacity: 0.5;
 }
 

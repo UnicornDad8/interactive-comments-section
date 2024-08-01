@@ -67,7 +67,7 @@ const Content = (props: ContentProps) => {
   return (
     <>
       {!isEditing ? (
-        <div className={styles["text-neutral-grayish-blue"]}>
+        <div className={styles["content"]}>
           <ContentUserTag replyingTo={replyingTo} />
           {content}
         </div>

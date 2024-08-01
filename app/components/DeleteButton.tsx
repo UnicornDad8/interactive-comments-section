@@ -17,8 +17,7 @@ const DeleteButton = (props: DeleteButtonProps) => {
   const commentIdToDelete = props.commentIdToDelete;
   const onDeleteReply = props.onDeleteReply;
   const replyIdToDelete = props.replyIdToDelete;
-
-  const show = props.show ? " " : "hidden ";
+  const show = props.show;
 
   const handleShowModalChange = () => {
     setShowModal((prevShowModal) => !prevShowModal);
@@ -30,15 +29,18 @@ const DeleteButton = (props: DeleteButtonProps) => {
 
   return (
     <>
-      <button onClick={handleClick} className={show + styles["delete-button"]}>
-        <Image
-          src="/images/icon-delete.svg"
-          alt="Delete Icon"
-          width={14}
-          height={14}
-        />
-        <div>Delete</div>
-      </button>
+      {show ? (
+        <button onClick={handleClick} className={styles["delete-button"]}>
+          <Image
+            src="/images/icon-delete.svg"
+            alt="Delete Icon"
+            width={14}
+            height={14}
+          />
+          <div>Delete</div>
+        </button>
+      ) : null}
+
       {showModal ? (
         <DeleteModal
           replyIdToDelete={replyIdToDelete}

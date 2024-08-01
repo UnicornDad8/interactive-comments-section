@@ -6,6 +6,7 @@
   border: none;
   background: transparent;
   color: var(--color-soft-red);
+  font-size: 1.4rem;
   font-weight: 600;
 }
 

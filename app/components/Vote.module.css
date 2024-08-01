@@ -1,0 +1,27 @@
+.vote-container {
+  background: var(--color-very-light-gray);
+  color: var(--color-moderate-blue);
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  border-radius: 0.6rem;
+}
+
+.center-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+@media only screen and (min-width: 769px) {
+  .vote-container {
+    padding: 1.6rem 1.2rem;
+    flex-direction: column;
+  }
+}

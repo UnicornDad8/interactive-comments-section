@@ -84,7 +84,7 @@ const Comment = (props: CommentProps) => {
   return (
     <>
       <div className={styles["comment-container"]}>
-        <div className={`${styles["hidden"]} ${styles["md-block"]}`}>
+        <div className="hidden md-block">
           <Vote
             commentIdToChangeVote={comment.id}
             onCommentVoteChange={onCommentVoteChange}
@@ -116,16 +116,14 @@ const Comment = (props: CommentProps) => {
           />
         </div>
         <div className={styles["actions-and-votes-container"]}>
-          <div className={`${styles["hidden"]} ${styles["md-block"]}`}>
+          <div className="block md-hidden">
             <Vote
               commentIdToChangeVote={comment.id}
               onCommentVoteChange={onCommentVoteChange}
               score={comment.score}
             />
           </div>
-          <div
-            className={`${styles["actions-container"]} ${styles["md-hidden"]}`}
-          >
+          <div className={`${styles["actions-container"]} md-hidden`}>
             <ReplyButton
               show={isCurrentUser}
               isReplying={isReplying}

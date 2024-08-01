@@ -6,6 +6,7 @@ import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import styles from "./UserDetail.module.css";
 
 dayjs.extend(relativeTime);
 
@@ -40,7 +41,7 @@ const UserDetail = (props: UserDetailProps) => {
   const username = props.username;
   const currentUser = props.currentUser;
   const createdAt = dayjs(props.createdAt).fromNow();
-  const isCurrentUser = username == currentUser.username ? true : false;
+  const isCurrentUser = username == currentUser.username;
   const handleIsReplyingChange = props.onIsReplyingChange;
   const isReplying = props.isReplying;
   const handleIsEditingChange = props.onIsEditingChange;
@@ -51,18 +52,20 @@ const UserDetail = (props: UserDetailProps) => {
   const replyIdToDelete = props.replyIdToDelete;
 
   return (
-    <div>
-      <div>
+    <div className={styles["user-detail-container"]}>
+      <div className={styles["user-details-no-actions"]}>
         <Avatar isBigAvatar={false} sourceImage={image} username={username} />
-        <div>
-          <div>{username}</div>
+        <div className={styles["username-container"]}>
+          <h3 className={styles["username"]}>
+            <strong>{username}</strong>
+          </h3>
           <UserLabel show={isCurrentUser} />
         </div>
-        <div>{createdAt}</div>
+        <div className={styles["user-date"]}>{createdAt}</div>
       </div>
-      <div>
+      <div className={`hidden ${styles["actions-container"]}`}>
         <ReplyButton
-          show={isCurrentUser}
+          show={!isCurrentUser}
           isReplying={isReplying}
           onIsReplyingChange={handleIsReplyingChange}
         />
