@@ -1,0 +1,34 @@
+.reply-container {
+  padding-left: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .reply-container {
+    margin-left: 3.2rem;
+    padding-left: 3.2rem;
+  }
+}
+
+.user-vote-and-actions {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  border-radius: 0.8rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .user-vote-and-actions {
+    flex-direction: row;
+  }
+}
+
+.user-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+}

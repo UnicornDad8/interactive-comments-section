@@ -21,6 +21,7 @@ type ActionButtonProps = {
   replyIdToUpdate?: number;
   updatedReplyContent?: string;
   resetCommentValue?: () => void;
+  isMobile?: boolean;
 };
 
 interface User {
@@ -75,6 +76,7 @@ const ActionButton = (props: ActionButtonProps) => {
   const replyIdToUpdate = props.replyIdToUpdate;
   const updatedReplyContent = props.updatedReplyContent;
   const resetCommentValue = props.resetCommentValue;
+  const isMobile = props.isMobile;
 
   const handleClick = () => {
     action === "send" ? onAddComment(newComment) : null;
@@ -144,7 +146,14 @@ const ActionButton = (props: ActionButtonProps) => {
   };
 
   return (
-    <button className={styles["action-button"]} onClick={handleClick}>
+    <button
+      className={
+        (isMobile ? styles["btn-mobile"] : styles["btn-desktop"]) +
+        " " +
+        styles["action-button"]
+      }
+      onClick={handleClick}
+    >
       {action}
     </button>
   );

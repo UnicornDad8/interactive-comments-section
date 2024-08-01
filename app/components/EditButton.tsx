@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import styles from "./EditButton.module.css";
 
 type EditButtonProps = {
   show: boolean;
@@ -16,7 +17,15 @@ const EditButton = (props: EditButtonProps) => {
   };
 
   return (
-    <button onClick={handleClick}>
+    <button
+      onClick={handleClick}
+      className={
+        show +
+        styles["edit-button"] +
+        " " +
+        (isEditing ? styles["opacity-50"] : " ")
+      }
+    >
       <Image
         src="/images/icon-edit.svg"
         alt="Edit Icon"

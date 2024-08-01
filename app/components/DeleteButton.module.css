@@ -1,0 +1,14 @@
+.delete-button {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--color-soft-red);
+  font-weight: 600;
+}
+
+.delete-button:hover {
+  opacity: 0.5;
+}

@@ -115,6 +115,7 @@ const InputComment = (props: InputCommentProps) => {
           onReplyComment={onReplyComment}
           onAddComment={onAddComment}
           action={action}
+          isMobile={true}
         />
       </div>
       <div className="hidden md-block">

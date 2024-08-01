@@ -1,6 +1,6 @@
 .input-comment-container {
   background: var(--color-white);
-  padding: 1.6rem;
+  padding: 2.2rem 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;

@@ -19,8 +19,8 @@ const Avatar = (props: AvatarProps) => {
   return (
     <Image
       className={styles["avatar"]}
-      width={isBigAvatar ? 56 : 48}
-      height={isBigAvatar ? 56 : 48}
+      width={isBigAvatar ? 48 : 32}
+      height={isBigAvatar ? 48 : 32}
       src={webp}
       alt={"Avatar of " + username}
     />

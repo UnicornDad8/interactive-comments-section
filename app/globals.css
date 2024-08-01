@@ -129,6 +129,7 @@ body {
   }
 }
 
+/* ------- responsive utility classes ------- */
 .hidden {
   display: none;
 }
@@ -139,7 +140,7 @@ body {
 
 @media only screen and (min-width: 769px) {
   .md-block {
-    display: block;
+    display: block !important;
   }
 
   .md-hidden {
@@ -158,12 +159,12 @@ body {
   rounded: 1.2rem;
   width: 100%;
   color: var(--color-dark-blue);
-  border-radius: 1.2rem;
+  border-radius: 0.8rem;
   height: 15rem;
 }
 
 @media only screen and (min-width: 769px) {
   .textarea {
-    height: auto;
+    height: 8rem;
   }
 }

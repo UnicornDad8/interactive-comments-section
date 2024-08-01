@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import DeleteModal from "./DeleteModal";
+import styles from "./DeleteButton.module.css";
 
 type DeleteButtonProps = {
   show: boolean;
@@ -29,7 +30,7 @@ const DeleteButton = (props: DeleteButtonProps) => {
 
   return (
     <>
-      <button onClick={handleClick}>
+      <button onClick={handleClick} className={show + styles["delete-button"]}>
         <Image
           src="/images/icon-delete.svg"
           alt="Delete Icon"

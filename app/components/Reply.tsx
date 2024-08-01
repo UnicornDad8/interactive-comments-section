@@ -8,6 +8,7 @@ import InputComment from "./InputComment";
 import { Console } from "console";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
+import styles from "./Reply.module.css";
 
 type ReplyProps = {
   currentUser: User;
@@ -63,16 +64,16 @@ const Reply = (props: ReplyProps) => {
   };
 
   return (
-    <div>
-      <div>
-        <div>
+    <div className={styles["reply-container"]}>
+      <div className={styles["user-vote-and-actions"]}>
+        <div className="hidden md-block">
           <Vote
             replyIdToChangeVote={reply.id}
             onReplyVoteChange={onReplyVoteChange}
             score={reply.score}
           />
         </div>
-        <div>
+        <div className={styles["user-detail-container"]}>
           <UserDetail
             replyIdToDelete={reply.id}
             onDeleteReply={onDeleteReply}
@@ -98,14 +99,14 @@ const Reply = (props: ReplyProps) => {
           />
         </div>
         <div>
-          <div>
+          <div className="block md-hidden">
             <Vote
               replyIdToChangeVote={reply.id}
               onReplyVoteChange={onReplyVoteChange}
               score={reply.score}
             />
           </div>
-          <div>
+          <div className="md-hidden">
             <ReplyButton
               show={isCurrentUser}
               isReplying={isReplying}
